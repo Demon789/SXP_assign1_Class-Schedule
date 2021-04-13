@@ -10,5 +10,5 @@ import java.util.Map;
 public class Course {
 
     private int cid;
-    private List<Map<Integer, Integer>> time;
+    private List<Map<String, String >> time;
 }

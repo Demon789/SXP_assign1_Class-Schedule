@@ -14,6 +14,9 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(handlerInterceptor);
+        registry.addInterceptor(handlerInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/user/login")
+        ;
     }
 }
