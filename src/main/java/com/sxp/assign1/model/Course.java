@@ -9,6 +9,8 @@ import java.util.Map;
 @Data
 public class Course {
 
-    private int cid;
-    private List<Map<String, String >> time;
+    private Integer cid;
+    private String courseName;
+    private String address;
+    private List<Map<String, Integer>> time;
 }
