@@ -29,7 +29,7 @@ public class CourseController {
     public ResponseData getCourseByUid(@RequestBody JSONObject src) {
         ResponseData responseData = new ResponseData();
         responseData.setCode(0);
-        Integer uid = src.getInt("uid");
+        Integer uid = Integer.valueOf((String) src.get("uid"));
         responseData.setData(courseService.getCourseByUid(uid));
         return responseData;
     }
@@ -55,7 +55,7 @@ public class CourseController {
     @PostMapping("/getMyCourse")
     public ResponseData getMyCourse(HttpSession session) {
         ResponseData responseData = new ResponseData();
-        Integer uid = (Integer) session.getAttribute("cid");
+        Integer uid = (Integer) session.getAttribute("uid");
         if (uid == null) {
             responseData.setCode(1);
             responseData.setMsg("请登录");

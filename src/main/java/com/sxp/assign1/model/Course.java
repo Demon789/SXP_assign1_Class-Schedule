@@ -12,5 +12,6 @@ public class Course {
     private Integer cid;
     private String courseName;
     private String address;
+    private String teacher;
     private List<Map<String, Integer>> time;
 }

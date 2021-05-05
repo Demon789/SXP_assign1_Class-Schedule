@@ -14,14 +14,15 @@ public interface CourseMapper {
     @Select("select * from course where cid=#{cid}")
     @Results(id = "getTime", value = {
             @Result(id = true, column = "cid", property = "cid"),
-            @Result(column = "cid", property = "time", many = @Many(select = "com.sxp.assign1.mapper.CourseMapper.getCourseTimeByCid"))
+            @Result(column = "cid", property = "time", many = @Many(select = "com.sxp.assign1.mapper.CourseMapper.getCourseTimeByCid")),
+            @Result(column = "course_name",property = "courseName")
     })
     public Course getCourseByCid(@Param("cid") Integer cid);
 
     @Select("select course_num, weekday from course_time where cid=#{cid}")
     public List<Map<String, String>> getCourseTimeByCid(@Param("cid") Integer cid);
 
-    @Select("SELECT course.cid cid, course.course_name course_name, course.address address FROM course NATURAL JOIN user_course WHERE uid=#{uid}")
+    @Select("SELECT course.cid cid, course.course_name course_name, course.address address, course.teacher teacher FROM course NATURAL JOIN user_course WHERE uid=#{uid}")
     @ResultMap("getTime")
     public List<Course> getCourseByUid(@Param("uid") Integer uid);
 
