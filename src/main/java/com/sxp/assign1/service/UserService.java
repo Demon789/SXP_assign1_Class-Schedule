@@ -13,7 +13,7 @@ public class UserService {
 
     public Integer checkUserLogin(UserVO userVO) {
         User user = userMapper.getUserByUsername(userVO.getUsername());
-        if (user.getPassword().equals(userVO.getPassword())) return user.getUid();
+        if (user!=null&&user.getPassword().equals(userVO.getPassword())) return user.getUid();
         return -1;
     }
 }
