@@ -16,4 +16,9 @@ public class UserService {
         if (user!=null&&user.getPassword().equals(userVO.getPassword())) return user.getUid();
         return -1;
     }
+    public boolean userInsert(User user){
+        if(userMapper.getUserByUsername(user.getUsername())==null)
+        return userMapper.insertUser(user);
+        else return false;
+    }
 }
