@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="css/font.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/myCss.css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>  
+</head>
+<body>
+    <canvas id="canvas" width="1280" height="1024"> 您的浏览器不支持canvas标签，请您更换浏览器 </canvas>
+    <script src="js/word.js"></script>
+    <p id="offscreen-text" class="offscreen-text"></p>
+    <p id="text" class="text"></p>
+	<div id="d" class="webdesigntuts-workshop">	
+	<div class="container" id="blur" >
+	<div class="content" id="d" class="webdesigntuts-workshop">	
+	<div class="neon" align="center" id="c"><a name="tips" color: #cce7f8  >Course Schedule</a></div>
+	<div class="neon"  id="c"><a name="tips" color: #cce7f8  >Course Schedule</a></div>
+	<div class="neon" align="center" id="c"><a name="tips" color: #cce7f8  >Course Schedule</a></div>
+	<div class="neon" align="center" id="c"><a name="tips" color: #cce7f8  >Course Schedule</a></div>
+	<div class="neon2" id="f"><a name="tips"  href="#" class="fanhui">返回</a></div>
+	<div class="neon2" id="f"><a name="tips"  href="#" class="fanhui">返回</a></div>
+	<br><br>
+	<!-- 课程表格 -->
+	<table cellpadding="27"  align="center" id="d" class="webdesigntuts-workshop">
+		<tr>
+			<th></th>
+			<th>Sunday</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>			
+		</tr>
+		<tr>
+			<th>1</th>
+			<td rowspan="13">休</td>
+			<td rowspan="2" style="background-color: rgba(255,246,143,0.8);" ><a href="#" onclick="toggle('popup_1')">普通物理学</a></td>
+			<td rowspan="2" style="background-color: rgba(255,225,255,0.6);"><a href="#" onclick="toggle('popup_2')">英语(ELC4)</a></td>
+			<td rowspan="2"></td>
+			<td rowspan="2" style="background-color: rgba(127,255,212,0.7);"><a href="#" onclick="toggle('popup_3')">数据结构与算法</a></td>
+			<td rowspan="2" style="background-color: rgba(255,225,255,0.6);"><a href="#" onclick="toggle('popup_2')">英语(ELC4)</a></td>
+			<td rowspan="13">休</td>
+			
+		</tr>
+		<tr>
+			<th>2</th>			
+		</tr>
+		<tr>
+			<th>3</th>
+			<td rowspan="5"></td>
+			<!-- <td rowspan="2" bgcolor="#7FFFD4"><a href="#" onclick="toggle('popup_3')">数据结构与算法</a></td> -->
+			<td rowspan="2" style="background-color: rgba(127,255,212,0.7);"><a href="#" onclick="toggle('popup_3')">数据结构与算法</a></td>
+			<td rowspan="2" style="background-color: rgba(255,192,203,0.8);"><a href="#" onclick="toggle('popup_4')">毛泽东思想和中国特色社会主义理论体系概论</a></td>
+			<td rowspan="2" style="background-color: rgba(255,246,143,0.8);"><a href="#" onclick="toggle('popup_1')">普通物理学</a></td>
+			<td rowspan="2" style="background-color: rgba(224,255,255,0.7);"><a href="#" onclick="toggle('popou_5')">研究方法与创新</a></td>			
+		</tr>
+		<tr>
+			<th>4</th>		
+		</tr>
+		<tr>
+			<th>5</th>
+			<td></td>
+			<td rowspan="6"></td>
+			<td></td>
+			<td rowspan="9"></td>
+		</tr>
+		<tr>
+			<th>6</th>
+			<!-- <td rowspan="2"></td> -->
+			<td rowspan="2" style="background-color: rgba(144,238,144,0.7);"><a href="#" onclick="toggle('popup_6')">音乐与影像</a></td>
+			<!-- <td rowspan="5"></td> -->
+			<td rowspan="2" style="background-color: rgba(255,192,203,0.8);"><a href="#" onclick="toggle('popup_4')">毛泽东思想和中国特色社会主义理论体系概论</a></td>
+		</tr>
+		<tr>
+			<th>7</th>
+		</tr>
+		<tr>
+			<th>8</th>
+			<td rowspan="3" style="background-color: rgba(255,228,181,0.6);"><a href="#" onclick="toggle('popup_7')">数据库原理</a></td>
+			<td rowspan="6"></td>
+			<td rowspan="6"></td>
+		</tr>
+		<tr>
+			<th>9</th>
+		</tr>
+		<tr>
+			<th>0</th>
+		</tr>
+		<tr>
+			<th>A</th>			
+			<td rowspan="3"></td>
+			<td rowspan="2" style="background-color: rgba(191,239,255,0.7);"><a href="#" onclick="toggle('popup_8')">排球</a></td>
+		</tr>
+		<tr>
+			<th>B</th>
+		</tr>
+		<tr>
+			<th>C</th>
+			<td></td>
+		</tr>
+	</table>
+	<br>
+	<a href="#tips" style="padding: 10px;margin-left: 750px;background-color: rgba(255,194,179,1); color: #000000;" id="e">回顶部</a>
+	</div>
+	</div>
+	</div>
+	<div id="popup_1" >
+		<h2>@E阶梯教室102</h2>
+		<h2>王江涌</h2>
+		<a href="#" onclick="toggle('popup_1')">Close</a>
+	</div>
+	<div id="popup_2">
+		<h2>@E405</h2>
+		<h2>Jules</h2>
+		<a href="#" onclick="toggle('popup_2')">Close</a>
+	</div>
+	<div id="popup_3">
+		<h2>@讲堂五</h2>
+		<h2>许建龙</h2>
+		<a href="#" onclick="toggle('popup_3')">Close</a>
+	</div>
+	<div id="popup_4">
+		<h2>@E309</h2>
+		<h2>刘英博</h2>
+		<a href="#" onclick="toggle('popup_4')">Close</a>
+	</div>
+	<div id="popup_5">
+		<h2>@E阶梯教室102</h2>
+		<h2>王珊珊</h2>
+		<a href="#" onclick="toggle('popup_5')">Close</a>
+	</div>
+	<div id="popup_6">
+		<h2>@讲堂一</h2>
+		<h2>刘大伟</h2>
+		<a href="#" onclick="toggle('popup_6')">Close</a>
+	</div>
+	<div id="popup_7">
+		<h2>@E306</h2>
+		<h2>张承钿</h2>
+		<a href="#" onclick="toggle('popup_7')">Close</a>
+	</div>
+	<div id="popup_8">
+		<h2>@排球场</h2>
+		<h2>马雯</h2>
+		<a href="#" onclick="toggle('popup_8')">Close</a>
+	</div>
+	 <script src='js/index.js'></script>
+	<script type="text/javascript">
+		function toggle(s){
+			let blur=document.getElementById('blur')
+			blur.classList.toggle('active')
+			let popup=document.getElementById(s)
+			popup.classList.toggle('active')
+		}
+	</script>
+    <script src='js/index.js'></script>
+</body>
+</html>

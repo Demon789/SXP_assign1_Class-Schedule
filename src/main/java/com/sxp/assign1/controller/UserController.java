@@ -47,4 +47,15 @@ public class UserController {
         }
         return responseData;
     }
+    @PostMapping("signUp")
+    public ResponseData signUp(@RequestBody User user){
+        ResponseData responseData=new ResponseData();
+        if(userService.userInsert(user)){
+            responseData.setCode(0);
+        }else{
+            responseData.setCode(1);
+            responseData.setMsg("该用户名已存在");
+        }
+        return responseData;
+    }
 }

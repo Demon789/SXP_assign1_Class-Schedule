@@ -1,6 +1,7 @@
 package com.sxp.assign1.mapper;
 
 import com.sxp.assign1.model.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -19,4 +20,7 @@ public interface UserMapper {
 
     @Select("select * from user where username=#{username}")
     public User getUserByUsername(@Param("username") String username);
+
+    @Insert("insert into user (username,password,phone,email)values(#{username},#{password},#{phone},#{email})")
+    public boolean insertUser(User user);
 }
