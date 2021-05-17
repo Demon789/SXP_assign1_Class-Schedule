@@ -16,12 +16,12 @@ $.ajax({
             let dayTmp = -1;
             let times = course["time"];
             times.sort((a, b) => 100 * (a["weekday"] - b["weekday"]) + (a["course_num"] - b["course_num"]));
-            let popHtml = "<div id=\"popup_"+course["cid"]+"\">\n" +
+            let popHtml = "<div class='popup' id=\"popup_"+course["cid"]+"\">\n" +
                 "\t\t<h2>"+course["address"]+"</h2>\n" +
                 "\t\t<h2>"+course["teacher"]+"</h2>\n" +
                 "\t\t<a href=\"#\" onclick=\"toggle('popup_"+course["cid"]+"')\">Close</a>\n" +
                 "\t</div>"
-            $("html").append(popHtml);
+            $("body").append(popHtml);
             let baseHtml = "<a href=\"#\" onclick=\"toggle('popup_" + course["cid"] + "')\">" + course["courseName"] + "</a>";
             for (let time of times) {
                 if (dayTmp == time["weekday"] && numTmp == time["course_num"] - 1) {

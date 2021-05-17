@@ -2,12 +2,12 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var selectSVG = function selectSVG(id) {
+var selectSVG = function (id) {
   var el = document.getElementById(id);
   return new SVGElement(el);
 };
 
-var createSVG = function createSVG(type) {
+var createSVG = function (type) {
   var el = document.createElementNS('http://www.w3.org/2000/svg', type);
   return new SVGElement(el);
 };
@@ -48,7 +48,7 @@ var letters = [];
 var prompt = ['s', 't', 'a', 'r', 't', ' ', 't', 'y', 'p', 'i', 'n', 'g'];
 var runPrompt = false;
 
-var resizePage = function resizePage() {
+var resizePage = function () {
   width = window.innerWidth;
   height = window.innerHeight;
   svg.set('height', height);
@@ -57,7 +57,7 @@ var resizePage = function resizePage() {
   resizeLetters();
 };
 
-var resizeLetters = function resizeLetters() {
+var resizeLetters = function () {
   textSize = width / (letters.length + 2);
   if (textSize > 100) textSize = 100;
   text.style.fontSize = textSize + 'px';
@@ -69,7 +69,7 @@ var resizeLetters = function resizeLetters() {
   positionLetters();
 };
 
-var positionLetters = function positionLetters() {
+var positionLetters = function () {
   letters.forEach(function (letter) {
     var timing = letter.shift ? 0.1 : 0;
     TweenLite.to(letter.onScreen, timing, { x: letter.offScreen.offsetLeft + 'px', ease: Power3.easeInOut });
@@ -77,7 +77,7 @@ var positionLetters = function positionLetters() {
   });
 };
 
-var animateLetterIn = function animateLetterIn(letter) {
+var animateLetterIn = function (letter) {
   var yOffset = (0.5 + Math.random() * 0.5) * textSize;
   TweenLite.fromTo(letter, 0.4, { scale: 0 }, { scale: 1, ease: Back.easeOut });
   TweenLite.fromTo(letter, 0.4, { opacity: 0 }, { opacity: 1, ease: Power3.easeOut });
@@ -88,7 +88,7 @@ var animateLetterIn = function animateLetterIn(letter) {
   TweenLite.to(letter, 0.2, { rotation: 0, ease: Power3.easeInOut, delay: 0.2 });
 };
 
-var addDecor = function addDecor(letter, color) {
+var addDecor = function (letter, color) {
   setTimeout(function () {
     var rect = letter.getBoundingClientRect();
     var x0 = letter.offsetLeft + letter.offsetWidth / 2;
@@ -102,7 +102,7 @@ var addDecor = function addDecor(letter, color) {
   }, 150);
 };
 
-var addTri = function addTri(x0, y0, shade) {
+var addTri = function (x0, y0, shade) {
   var tri = createSVG('polygon');
   var a = Math.random();
   var a2 = a + (-0.2 + Math.random() * 0.4);
@@ -123,7 +123,7 @@ var addTri = function addTri(x0, y0, shade) {
     } });
 };
 
-var addCirc = function addCirc(x0, y0) {
+var addCirc = function (x0, y0) {
   var circ = createSVG('circle');
   var a = Math.random();
   var r = textSize * 0.52;
@@ -141,7 +141,7 @@ var addCirc = function addCirc(x0, y0) {
     } });
 };
 
-var addLetter = function addLetter(char, i) {
+var addLetter = function (char, i) {
   var letter = document.createElement('span');
   var oLetter = document.createElement('span');
   letter.innerHTML = char;
@@ -155,7 +155,7 @@ var addLetter = function addLetter(char, i) {
   addDecor(oLetter, color);
 };
 
-var addLetters = function addLetters(value) {
+var addLetters = function (value) {
   value.forEach(function (char, i) {
     if (letters[i] && letters[i].char !== char) {
       letters[i].onScreen.innerHTML = char;
@@ -168,7 +168,7 @@ var addLetters = function addLetters(value) {
   });
 };
 
-var animateLetterOut = function animateLetterOut(letter, i) {
+var animateLetterOut = function (letter, i) {
   TweenLite.to(letter.onScreen, 0.1, { scale: 0, opacity: 0, ease: Power2.easeIn, onComplete: function onComplete() {
       console.log('removing');
       console.log(letter);
@@ -179,7 +179,7 @@ var animateLetterOut = function animateLetterOut(letter, i) {
   letters.splice(i, 1);
 };
 
-var removeLetters = function removeLetters(value) {
+var removeLetters = function (value) {
   for (var i = letters.length - 1; i >= 0; i--) {
     var letter = letters[i];
     if (value[i] === undefined) {
@@ -188,14 +188,14 @@ var removeLetters = function removeLetters(value) {
   }
 };
 
-var onInputChange = function onInputChange() {
+var onInputChange = function () {
   var value = input.value === '' ? [] : input.value.toLowerCase().split('');
   addLetters(value);
   removeLetters(value);
   resizeLetters();
 };
 
-var keyup = function keyup(e) {
+var keyup = function (e) {
   if (runPrompt) {
     input.value = '';
     runPrompt = false;
@@ -203,7 +203,7 @@ var keyup = function keyup(e) {
   onInputChange();
 };
 
-var addPrompt = function addPrompt(i) {
+var addPrompt = function (i) {
   setTimeout(function () {
     if (runPrompt && prompt[i]) {
       input.value = input.value + prompt[i];
