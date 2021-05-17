@@ -9,16 +9,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     public Integer checkUserLogin(UserVO userVO) {
         User user = userMapper.getUserByUsername(userVO.getUsername());
-        if (user!=null&&user.getPassword().equals(userVO.getPassword())) return user.getUid();
+        if (user != null && user.getPassword().equals(userVO.getPassword())) return user.getUid();
         return -1;
     }
-    public boolean userInsert(User user){
-        if(userMapper.getUserByUsername(user.getUsername())==null)
-        return userMapper.insertUser(user);
+
+    public boolean userInsert(User user) {
+        if (userMapper.getUserByUsername(user.getUsername()) == null)
+            return userMapper.insertUser(user);
         else return false;
     }
 }
