@@ -16,6 +16,7 @@ tr{
 }
 
 td{
+	opacity: 0.7;
 	font-weight: 550;
 	width: 50px;
 	overflow:hidden;
@@ -59,7 +60,7 @@ a{
 	/* pointer-events: none;
 	user-select: none; */
 }
-#popup_1,#popup_2,#popup_3,#popup_4,#popup_5,#popup_6,#popup_7,#popup_8{
+.popup{
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -71,12 +72,30 @@ a{
 	visibility: hidden;
 	opacity: 0;
 }
-#popup_1.active,#popup_2.active,#popup_3.active,#popup_4.active,#popup_5.active,#popup_6.active,#popup_7.active,#popup_8.active{
+.active{
 	top: 50%;
 	visibility: visible;
-	opacity: 0.9;/*弹出框的背景透明度*/
-	transition: 0.5 s;
+	opacity: 0.9;
+	transition: 0.5s;
 }
+/*#popup_1,#popup_2,#popup_3,#popup_4,#popup_5,#popup_6,#popup_7,#popup_8{*/
+/*	position: absolute;*/
+/*	top: 40%;*/
+/*	left: 50%;*/
+/*	transform: translate(-50%,-50%);*/
+/*	width: 300px;*/
+/*	padding: 50px;*/
+/*	box-shadow: 0 5px 30px rgba(0,0,0,0.3);*/
+/*	background: #ffc2b3;*/
+/*	visibility: hidden;*/
+/*	opacity: 0;*/
+/*}*/
+/*#popup_1.active,#popup_2.active,#popup_3.active,#popup_4.active,#popup_5.active,#popup_6.active,#popup_7.active,#popup_8.active{*/
+/*	top: 50%;*/
+/*	visibility: visible;*/
+/*	opacity: 0.9;!*弹出框的背景透明度*!*/
+/*	transition: 0.5 s;*/
+/*}*/
 /*各模块位置处理*/
 #d{
 	position: absolute;
