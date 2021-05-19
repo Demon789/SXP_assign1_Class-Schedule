@@ -3,10 +3,10 @@ let data = {
 }
 let beautifulColor = ["#FFF68F", "#FFF0F5","#DDA0DD", "#FFC0CB","#C1FFC1","#F0FFFF","#FFE4C4","#FFF5EE"];
 $.ajax({
-    url: "/course/getCourseByUid",//  若要改成获取自己的课可把url改为/course/getMyCourse，此时需要登录才能获得课程
+    url: "/course/getMyCourse",//  若要改成获取自己的课可把url改为/course/getMyCourse，此时需要登录才能获得课程
     contentType: "application/json",
     dataType: "json",
-    data: JSON.stringify(data),
+    // data: JSON.stringify(data),
     type: "post",
     success: function (data) {
         let courses = data["data"];
