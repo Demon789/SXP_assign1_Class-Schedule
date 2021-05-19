@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/01.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <ul>
+            <li>
+                <a href="#" class="lsy">汕头大学</a>
+                <div class="middle">
+                    <h1>welcome</h1>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <!-- <button type="button" onclick="denglu()">登录/注册 </button> -->
+                <a href="login.html">登录</a>
+            </li>
+			<li>
+				<a href="login.html">注册</a>
+			</li>
+        </ul>
+    </header>
+    <section class="banner">
+        <video class="abc" autoplay="" loop="" style="background-image:url(>)">
+            <source src="v.mp4" type="video/mp4"></video>
+    </section>
+    <div class="slidershow middle">
+
+        <div class="slides">
+
+            <input type="radio" name="r" id="r1" checked />
+            <input type="radio" name="r" id="r2" />
+            <input type="radio" name="r" id="r3" />
+
+            <div class="slide s1">
+                <a href="https://www.stu.edu.cn/">
+                    <img src="img/3.jpg" alt="photo" /></a>
+            </div>
+
+            <div class="slide">
+                <img src="img/2.jpg" alt="photo" />
+            </div>
+
+            <div class="slide">
+                <img src="img/1.jpg" alt="photo" />
+            </div>
+
+        </div>
+
+        <div class="navigaion">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+        </div>
+
+    </div>
+  
+<script type="text/javascript">
+    // 弹窗
+    // document.getElementById('tanchuang').style.display = "none";
+
+    // function denglu() {
+    //     document.getElementById('tanchaung').style.display = "block";
+    // }
+	function toggle(s) {
+	    let blur = document.getElementById('blur')
+	    blur.classList.toggle('active')
+	    let popup = document.getElementById(s)
+	    popup.classList.toggle('active')
+	}
+	
+    //水welcom的js
+    function hidder() {
+        document.getElementById('tanchuang').style.display = "none";
+    }
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+</body>
+
+</html>
