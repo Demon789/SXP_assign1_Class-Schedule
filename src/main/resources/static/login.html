@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/01.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="login">
+            <!-- --注册表单-- -->
+            <div class="login_visible">
+                <div class="login_content ">
+                    <h1 class="login_title ">注册</h1>
+
+                    <form action="" class="form">
+                        <label for="username" class="form_label">用户名</label>
+                        <input type="text" id="username" class="form_input">
+                        <label for="password" class="form_label">密码</label>
+                        <input type="text" id="username" class="form_input">
+                        <label for="email" class="form_label">邮箱</label>
+                        <input type="text" id="username" class="form_input">
+                        <label for="telephone" class="form_label">电话</label>
+                        <input type="text" id="telephone" class="form_input">
+                        <button class="form_btn" type="button" value="Submit">确认注册</button>
+                        <button class="form_toggle js-formToggle" type="button">切换至登录</button>
+                    </form>
+
+
+                </div>
+            </div>
+            <!--登录表单-->
+            <div class="login_content  login_content-overlay js-panel_content ">
+                <h1 class="login_title">登录</h1>
+                <form class="form">
+                    <label class="form_label" for="usernameIn">用户名</label>
+                    <input class="form_input" type="text" id="usernameIn" name="usernameIn">
+                    <label class="form_label" for="passwordIn">密码</label>
+                    <input class="form_input " type="password" id="passwordIn" name="passwordIn">
+                    <button class="form_btn" type="button" value="Submit">确认登录</button>
+                    <br>
+                    <button class="form_toggle js-formToggle" type="button">切换至注册</button>
+                </form>
+            </div>
+            <div class="panel_back js-imageAnimate">
+                <a href="https://www.stu.edu.cn/"> <img class="login_img" src="img/011.png" /></a>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
